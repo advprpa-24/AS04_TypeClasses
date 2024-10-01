@@ -1,0 +1,35 @@
+cabal-version:      3.0
+name:               TypeClasses
+version:            0.1.0.0
+author:             Daniel Kröni
+maintainer:         daniel.kroeni@fhnw.ch
+build-type:         Simple
+
+common warning
+    ghc-options: -Wall
+
+test-suite map
+    import:           warning
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    main-is:          Map/Tests.hs
+    other-modules:    Map.TreeMap
+    build-depends:
+        base ^>=4.17.0.0,
+        hspec ==2.11.4,
+        hspec-contrib,
+        QuickCheck,
+        HUnit
+
+test-suite imp
+    import:           warning
+    default-language: Haskell2010 
+    type:             exitcode-stdio-1.0
+    main-is:          Lang/Tests.hs
+    other-modules:    Map.TreeMap, Lang.Imp
+    build-depends:
+        base ^>=4.17.0.0,
+        hspec ==2.11.4,
+        hspec-contrib,
+        QuickCheck,
+        HUnit
